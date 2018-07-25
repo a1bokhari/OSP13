@@ -1,0 +1,29 @@
+resource_registry:
+    OS::TripleO::Controller::Net::SoftwareConfig: ../nic-configs/controller-no-external.yaml
+    OS::TripleO::Compute::Net::SoftwareConfig: ../nic-configs/compute.yaml
+
+parameter_defaults:
+    InternalApiNetCidr: 172.17.5.0/24
+    StorageNetCidr: 172.17.7.0/24
+    StorageMgmtNetCidr: 172.17.8.0/24
+    TenantNetCidr: 172.17.6.0/24
+    ExternalNetCidr: 10.1.8.0/22
+    ControlPlaneSubnetCidr: '24'
+    InternalApiAllocationPools: [{'start': '172.17.5.10', 'end': '172.17.5.200'}]
+    StorageAllocationPools: [{'start': '172.17.7.10', 'end': '172.17.7.200'}]
+    StorageMgmtAllocationPools: [{'start': '172.17.8.10', 'end': '172.17.8.200'}]
+    TenantAllocationPools: [{'start': '172.17.6.10', 'end': '172.17.6.200'}]
+    ExternalAllocationPools: [{'start': '10.1.10.50','end': '10.1.10.55'}]     
+    ExternalInterfaceDefaultRoute: 10.1.11.254
+    InternalApiNetworkVlanID: 401
+    StorageNetworkVlanID: 402
+    StorageMgmtNetworkVlanID: 403
+    TenantNetworkVlanID: 404
+    NeutronExternalNetworkBridge: "''"
+    ControlPlaneDefaultRoute: 192.0.2.1
+    EC2MetadataIp: 192.0.2.1
+    ControlPlaneIp: 192.0.2.1
+    DnsServers: ["10.11.5.19", "10.10.160.2", "10.5.30.160"]
+    OvercloudControlFlavor: control
+    OvercloudComputeFlavor: compute
+
