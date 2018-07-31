@@ -1,0 +1,18 @@
+parameter_defaults:
+  #### CEPH SETTINGS ####
+
+  ## When deploying Ceph Nodes through the oscplugin CLI, the following
+  ## parameters are set automatically by the CLI. When deploying via
+  ## heat stack-create or ceph on the controller nodes only,
+  ## they need to be provided manually.
+
+   CephPoolDefaultSize: 2 
+   CephPoolDefaultPgNum: 64
+
+  ## OSDs configuration
+  ## See https://github.com/ceph/ceph-ansible/blob/stable-3.0/docs/source/osds/scenarios.rst
+   CephAnsibleDisksConfig:
+     devices:
+     - /dev/sdc
+     - /dev/sdd
+     osd_scenario: collocated

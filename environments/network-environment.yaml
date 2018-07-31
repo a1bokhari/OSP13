@@ -1,6 +1,7 @@
 resource_registry:
     OS::TripleO::Controller::Net::SoftwareConfig: ../nic-configs/controller-no-external.yaml
     OS::TripleO::Compute::Net::SoftwareConfig: ../nic-configs/compute.yaml
+    OS::TripleO::ComputeHCI::Net::SoftwareConfig: ../nic-configs/computeHCI.yaml
 
 parameter_defaults:
     InternalApiNetCidr: 172.17.5.0/24
@@ -26,4 +27,4 @@ parameter_defaults:
     DnsServers: ["10.11.5.19", "10.10.160.2", "10.5.30.160"]
     OvercloudControlFlavor: control
     OvercloudComputeFlavor: compute
-
+    OvercloudComputeHCIFlavor: computeHCI
